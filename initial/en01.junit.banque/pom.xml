@@ -1,0 +1,358 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>2.7.1</version>
+    <relativePath /> <!-- lookup -->
+  </parent>
+
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.banque</groupId>
+  <artifactId>en01.junit.banque</artifactId>
+  <description>Utilisation du Spring avec JPA 2.1 et hibernate5. Par Spring boot 2.  Utilisation de H2 sur les tests uniquement.</description>
+  <packaging>war</packaging>
+
+  <developers>
+    <developer>
+      <id>rf</id>
+      <name>Ferret Renaud</name>
+      <email>admin@ferretrenaud.fr</email>
+      <url>http://ferretrenaud.fr</url>
+    </developer>
+  </developers>
+
+  <licenses>
+    <license>
+      <name>Simple Machines License</name>
+      <url>http://www.simplemachines.org/about/smf/license.php</url>
+    </license>
+  </licenses>
+
+  <properties>
+    <java.version>11</java.version>
+
+    <version.spring.security.jwt>1.1.1.RELEASE</version.spring.security.jwt>
+    <version.spring.security.oauth2>2.5.2.RELEASE</version.spring.security.oauth2>
+    <version.io.jsonwebtoken>0.11.5</version.io.jsonwebtoken>
+    
+    <!-- https://springdoc.github.io/ -->
+    <version.springdoc.openapi.ui>1.6.9</version.springdoc.openapi.ui>
+
+    <maven.compiler.source>${java.version}</maven.compiler.source>
+    <maven.compiler.target>${java.version}</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <jacoco-maven-plugin-version>0.8.8</jacoco-maven-plugin-version>
+    <maven-surefire-plugin.version>3.0.0-M7</maven-surefire-plugin.version>
+
+    <!-- Informations propres a Sonar pour l'analyse qualite -->
+    <!-- https://docs.sonarqube.org/latest/analysis/analysis-parameters/ -->
+
+    <!-- A ajuster en mode remote par
+    <sonar.login>admin</sonar.login>squ_d785765af1e38b6842477a2480ce0966671fb4d4
+    <sonar.password>root</sonar.password>-->
+    <sonar.login>squ_d785765af1e38b6842477a2480ce0966671fb4d4</sonar.login>
+    <!--<sonar.host.url>http://ns3138771.ip-94-23-10.eu/sonar</sonar.host.url> -->
+    
+    <!-- En mode local  
+    <sonar.login>admin</sonar.login>
+    <sonar.password>bonjour</sonar.password>
+    <sonar.host.url>http://localhost:9000</sonar.host.url>
+    -->
+    
+    <sonar.scm.provider>git</sonar.scm.provider>
+    <!-- A effacer si besoin -->
+   	<sonar.scm.disabled>true</sonar.scm.disabled>
+   	<!-- Information portentiellement importante, 
+   		 sinon Sonar prend la version Maven = version du Spring Boot
+   	-->
+   	<sonar.projectVersion>1.0.0</sonar.projectVersion>
+   	
+    <sonar.sourceEncoding>${project.build.sourceEncoding}</sonar.sourceEncoding>
+    <sonar.language>java</sonar.language>
+    <sonar.java.source>${maven.compiler.source}</sonar.java.source>
+    <sonar.tests>src/test/java</sonar.tests>
+    <sonar.java.coveragePlugin>jacoco</sonar.java.coveragePlugin>
+
+    <!-- La partie 'rest' est a retirer plus tard -->
+    <sonar.coverage.exclusions>src/main/java/com/banque/service/ex/**/*.java,src/main/java/com/banque/entity/**/*.java,src/main/java/com/banque/web/dto/**/*.java,src/main/java/com/banque/spring/**/*.java,src/main/java/com/banque/web/controller/rest/**/*.java</sonar.coverage.exclusions>
+  </properties>
+
+  <build>
+    <finalName>${project.artifactId}</finalName>
+
+    <plugins>
+
+	<!-- 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.14.0</version>
+      </plugin>
+ 	-->
+ 	
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-war-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>${jacoco-maven-plugin-version}</version>
+        <configuration>
+          <excludes>
+            <!-- A retirer plus tard -->
+            <exclude>src/main/java/com/banque/web/controller/rest/**/*</exclude>
+
+            <exclude>src/main/java/com/banque/service/ex/**/*</exclude>
+            <exclude>src/main/java/com/banque/entity/**/*</exclude>
+            <exclude>src/main/java/com/banque/web/dto/**/*</exclude>
+            <exclude>src/main/java/com/banque/spring/**/*</exclude>
+          </excludes>
+        </configuration>
+
+        <executions>
+          <execution>
+            <id>default-prepare-agent</id>
+            <goals>
+              <goal>prepare-agent</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-report</id>
+            <goals>
+              <goal>report</goal>
+            </goals>
+          </execution>
+          <execution>
+            <id>default-check</id>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <rule>
+                  <element>BUNDLE</element>
+                  <limits>
+                    <limit>
+                      <counter>COMPLEXITY</counter>
+                      <value>COVEREDRATIO</value>
+                      <minimum>0.15</minimum>
+                    </limit>
+                  </limits>
+                </rule>
+              </rules>
+            </configuration>
+          </execution>
+        </executions>
+
+      </plugin>
+
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <configuration>
+          <mainClass>com.banque.SpringBootConfiguration</mainClass>
+          <layout>WAR</layout>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>repackage</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <reporting>
+    <plugins>
+	<!-- 
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.14.0</version>
+      </plugin>
+ 	-->
+    </plugins>
+  </reporting>
+
+  <dependencyManagement>
+    <dependencies>
+
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-api</artifactId>
+        <version>${version.io.jsonwebtoken}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-impl</artifactId>
+        <version>${version.io.jsonwebtoken}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.jsonwebtoken</groupId>
+        <artifactId>jjwt-jackson</artifactId>
+        <version>${version.io.jsonwebtoken}</version>
+        <scope>runtime</scope>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.security</groupId>
+        <artifactId>spring-security-jwt</artifactId>
+        <version>${version.spring.security.jwt}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework.security.oauth</groupId>
+        <artifactId>spring-security-oauth2</artifactId>
+        <version>${version.spring.security.oauth2}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.springdoc</groupId>
+        <artifactId>springdoc-openapi-ui</artifactId>
+        <version>${version.springdoc.openapi.ui}</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <dependencies>
+
+    <!-- must be on the classpath -->
+    <!-- view-source:https://www.jacoco.org/jacoco/trunk/doc/examples/build/pom-offline.xml -->
+    <dependency>
+      <groupId>org.jacoco</groupId>
+      <artifactId>org.jacoco.agent</artifactId>
+      <classifier>runtime</classifier>
+      <version>${jacoco-maven-plugin-version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Pour avoir un WAR avec notre Spring Boot -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-web</artifactId>
+      <!-- On veut utiliser log4j2, donc on retire le module de base -->
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-rest</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-hateoas</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Pour Hibernate -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+
+    <!-- Puis on ajoute la dependance sur le module de Log4j2 -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-log4j2</artifactId>
+    </dependency>
+
+    <!-- Pour nos tests unitaires -->
+    <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <scope>test</scope>
+      <exclusions>
+        <exclusion>
+          <groupId>org.springframework.boot</groupId>
+          <artifactId>spring-boot-starter-logging</artifactId>
+        </exclusion>
+      </exclusions>
+
+    </dependency>
+
+    <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.h2database</groupId>
+      <artifactId>h2</artifactId>
+      <scope>runtime</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security</groupId>
+      <artifactId>spring-security-jwt</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework.security.oauth</groupId>
+      <artifactId>spring-security-oauth2</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-api</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-impl</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>io.jsonwebtoken</groupId>
+      <artifactId>jjwt-jackson</artifactId>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springdoc</groupId>
+      <artifactId>springdoc-openapi-ui</artifactId>
+    </dependency>
+
+  </dependencies>
+</project>

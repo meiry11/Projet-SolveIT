@@ -1,0 +1,12 @@
+
+<div>
+    <h2>
+        Nom {{utilisateur.nom}}
+    </h2>
+    <h2>
+        Prenom {{utilisateur.prenom}}
+    </h2>
+    {{utilisateur | json}}
+    <button (click)="onDelete()"> Supprimer</button>
+    <button (click)="onUpdate()"> Modifier</button>
+</div>

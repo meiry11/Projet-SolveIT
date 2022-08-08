@@ -1,0 +1,90 @@
+<div class="row">        
+
+    <div class="col-12">
+   
+      <div class="card">
+  
+          <div class="card-body">
+            
+            <div class="card-body">
+
+                <div class="container">
+                    <div class="img-container">
+                        <img src="assets/images/formul/head.png" alt="rien">
+                    </div>
+                    <div class="img-container">
+                        <img src="assets/images/formul/head1.png" alt="rien">
+                    </div>
+                    <div class="img-contain">
+                        <img class="img-cont" src="assets/images/formul/logo-savary.png" alt="rien">
+                    </div>
+                    <div class="img-container">
+                        <h6 class="">FEUILLE D'EMARGEMENTS
+                            PROGRAMME REGIONAL DE FORMATION</h6>
+                    </div>
+                    
+               
+                </div>
+                <div class="labels-container">
+                    <div class="label-container">
+                        <div>
+                            <form action="" autocomplete="on">
+                                <label for="session">Session :</label>
+                                <select autocomplete="on" id="session" name="session"  [(ngModel)]="selectedOption" (change)="onChange()">   
+                                    <option>
+
+                                    </option>                        
+                                    <option *ngFor="let option of options" [value]="option.libelle">
+                                        {{option.libelle}}
+                                    </option>
+                                </select>
+
+                            </form>
+                        </div>
+
+                        <label>Numéro de l'action :<input type="text" [(ngModel)]="numero" [placeholder]="numero" required="required" /></label>
+                        <label>Dates de formation : de <input [(ngModel)]="dateDForm"  type="date" (change)="onChange()" /> à <input [(ngModel)]="dateFForm"  type="date" (change)="onChange()" /></label>
+                    </div>
+                    <div class="label-container">
+                        <label>Intitulé de l'action :<input [(ngModel)]="intitule" type="text" required="required" /></label>
+                        <label>Lieu de Formation :<input [(ngModel)]="lieu" type="text" required="required" /></label>
+                        <label>Date de l'émargement :<input [(ngModel)]="dateE" type="date" required="required"  /></label>
+                    </div>
+                    <div class="label-container">
+
+                        <section class="example-section">
+                            <div class="radio">
+                                <div>
+                                    <input type="radio" class="custom-control-input radio-button"  [value]="1" name="temps" ng-control="temps" [(ngModel)]="temps" required>
+                                    <label class="custom-control-label" for="matin">Matin</label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="custom-control-input radio-button"  [value]="2" name="temps" ng-control="temps" [(ngModel)]="temps" required>
+                                    <label class="custom-control-label" for="apres">Après-Midi</label>
+                                </div>
+    
+                            </div>
+                          </section>
+                    </div>
+
+                </div>
+
+                <div *ngIf="stagiaires != ''">
+                   <app-table-emargement [time]="temps"  [stagiaires]="stagiaires"></app-table-emargement> 
+                   <div class="btn-container bttn">
+                        <app-enregistrer class="bttn"  (click)="onSubmit()" routerLink="/component/card"></app-enregistrer>
+                        <button type="button" class="bttn" class="bttn" (click)="printPage()">
+                            <app-imprimer></app-imprimer>
+                          </button>
+                        <app-annuler class="bttn" [chemin] = "chemin"></app-annuler>
+                   </div> 
+
+                </div>
+         
+            
+            </div>
+           </div>
+            <!-- Card -->
+        </div>
+    </div>
+</div>

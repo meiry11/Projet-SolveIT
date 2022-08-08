@@ -1,0 +1,35 @@
+<!-- <app-first-component></app-first-component>
+<app-user></app-user> 
+<app-carte-visite></app-carte-visite>
+<app-alert-button></app-alert-button>
+<app-liste></app-liste>
+<app-magie></app-magie>
+<app-liste-filtre></app-liste-filtre>
+<app-pipe></app-pipe>
+<app-generic-alert-button buttonTitle="Just Click" alertMessage="hiiii"></app-generic-alert-button>
+<app-generic-alert-button buttonTitle="not Click" alertMessage="hooo"></app-generic-alert-button>
+
+<app-button-menu></app-button-menu>
+<app-liste-courses></app-liste-courses>
+<app-reactive-liste-courses></app-reactive-liste-courses>
+<app-formbuiled-liste-courses></app-formbuiled-liste-courses>
+ <app-data-courses></app-data-courses> 
+ <mat-slider min="1" max="100" step="1" value="50"></mat-slider> -->
+<!-- {{utilisateurs | json}} -->
+
+<div *ngFor="let utilisateur of utilisateurs" >
+    
+    <app-utilisateur-card 
+    
+    [utilisateur]="utilisateur"
+    (delete)="onDelete($event)"
+    (modifier)="onModifier($event)"
+    ></app-utilisateur-card>
+    <app-utilisateur-formulaire *ngIf="utilisateur.id == editutilisateur?.id"
+    [default]="utilisateur"></app-utilisateur-formulaire>
+</div>
+<app-utilisateur-formulaire (finish)="onSave($event)"></app-utilisateur-formulaire>
+{{utilisateurs | json}}
+
+
+<router-outlet></router-outlet>

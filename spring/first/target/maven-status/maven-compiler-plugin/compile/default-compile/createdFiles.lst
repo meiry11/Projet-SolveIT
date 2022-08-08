@@ -1,0 +1,9 @@
+fr\exemple\entity\Instrument.class
+fr\exemple\entity\MusicienFactory.class
+fr\exemple\entity\Guitare.class
+fr\exemple\entity\Musicien.class
+fr\exemple\entity\Piano.class
+fr\exemple\entity\Pianiste.class
+fr\exemple\Main.class
+fr\exemple\entity\Guitariste.class
+fr\exemple\entity\InstrumentFactory.class

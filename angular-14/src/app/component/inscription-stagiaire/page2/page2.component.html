@@ -1,0 +1,410 @@
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">DEPARTEMENT OU TERRITOIRE D’OUTRE-MER</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Habitez-vous dans un DOM-TOM (Guadeloupe, Martinique…) ?</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Oui" name="DOM" [(ngModel)]="DOM" required>
+                                <label class="custom-control-label" for="Oui">Oui</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Non" name="DOM" [(ngModel)]="DOM"  required>
+                                <label class="custom-control-label" for="Non">Non</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+</table>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">FAMILLE</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Vivez-vous?</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="seul" name="Vivez"  [(ngModel)]="Vivez" required>
+                                <label class="custom-control-label" for="seul">Seul</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="couple" name="Vivez"  [(ngModel)]="Vivez"  required>
+                                <label class="custom-control-label" for="couple">En couple</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="parent" name="Vivez"  [(ngModel)]="Vivez" required>
+                                <label class="custom-control-label" for="parent">Chez un parent</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+        <tbody>
+            <th>
+                  <div class="hdp container">
+
+                        <div class="radio">
+                            <label>Nombre de personnes en emploi du foyer :</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="0" name="foyer" [(ngModel)]="foyer" required>
+                                <label class="custom-control-label" for="0">0</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="1" name="foyer" [(ngModel)]="foyer" required>
+                                <label class="custom-control-label" for="1">1</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="2" name="foyer" [(ngModel)]="foyer" required>
+                                <label class="custom-control-label" for="2">2</label>
+                            </div>
+
+                        </div>
+                  </div>
+              </th>
+      </tbody>
+      <tbody>
+            <th>
+              <div class="hdp container">
+
+                <div class="radio">
+                    <label>Avez-vous un ou plusieurs enfants à charge ?</label>
+                    <div>
+                        <input type="radio" class="custom-control-input radio-button"  value="Oui" name="enfants" [(ngModel)]="enfants" required>
+                        <label class="custom-control-label" for="Oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="custom-control-input radio-button"  value="Non" name="enfants" [(ngModel)]="enfants" required>
+                        <label class="custom-control-label" for="Non">Non</label>
+                    </div>
+                </div>
+              </div>
+          </th>
+        </tbody>
+        <tbody>
+            <th>
+              <div class="hdp container">
+
+                <div class="radio">
+                    <label>Vos deux parents sont-ils nés en France?</label>
+                    <div>
+                        <input type="radio" class="custom-control-input radio-button"  value="Oui" name="parents" [(ngModel)]="parents" required>
+                        <label class="custom-control-label" for="Oui">Oui</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="custom-control-input radio-button"  value="Non" name="parents" [(ngModel)]="parents" required>
+                        <label class="custom-control-label" for="Non">Non</label>
+                    </div>
+                    <div>
+                        <input type="radio" class="custom-control-input radio-button"  value="pas" name="parents" [(ngModel)]="parents" required>
+                        <label class="custom-control-label" for="pas">Ne se prononce pas</label>
+                    </div>
+                </div>
+              </div>
+          </th>
+        </tbody>
+</table>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">LOGEMENT</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Vous êtes :</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Propriétaire" name="logement"  [(ngModel)]="logement"  required>
+                                <label class="custom-control-label" for="Propriétaire">Propriétaire</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Locataire" name="logement" [(ngModel)]="logement"  required>
+                                <label class="custom-control-label" for="Locataire">Locataire</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Autre" name="logement" [(ngModel)]="logement"  required>
+                                <label class="custom-control-label" for="Autre">Autre</label>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+        <tbody>
+            <th>
+                  <div class="hdp container">
+
+                    <div class="radio">
+                        <label>Avez-vous des risques de perdre votre logement ?</label>
+                        <div>
+                            <input type="radio" class="custom-control-input radio-button"  value="Oui" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                            <label class="custom-control-label" for="Oui">Oui</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="custom-control-input radio-button"  value="Non" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                            <label class="custom-control-label" for="Non">Non</label>
+                        </div>
+                        <div>
+                            <input type="radio" class="custom-control-input radio-button"  value="pas" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                            <label class="custom-control-label" for="pas">Ne se prononce pas</label>
+                        </div>
+                    </div>
+                  </div>
+              </th>
+      </tbody>
+
+</table>
+
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">ORIGINE DE LA DEMARCHE DE FORMATION</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Quelle est la structure qui vous a orienté vers cette formation ?</label>
+                            <select matNativeControl required [(ngModel)]="structureSelect">
+                                <option *ngFor="let structure of structures" [value]="structure.value">
+                                  {{ structure.value }}
+                                </option>
+                              </select>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+
+</table>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">MOYENS DE TRANSPORT</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Quels moyens de transport utilisez-vous pour venir en formation ?</label>
+                            <select matNativeControl required  [(ngModel)]="transportSelect">
+                                <option *ngFor="let transport of transports" [value]="transport.value">
+                                  {{ transport.value }}
+                                </option>
+                              </select>
+
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+        <tbody>
+            <th>
+                  <div class="hdp container">
+                    <div>
+                        <label class="custom-control-label" for="temps">Temps de trajet (En minute) : </label>
+                        <input type="text" class="custom-control-input " name="temps_trajet" [(ngModel)]="temps_trajet" required>
+                    </div>
+
+                  </div>
+              </th>
+      </tbody>
+
+</table>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">Prestation HEBERGEMENT liée à la formation</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Si hébergement : Indiquez le Code Arrondissement
+                                </label>
+                            <select matNativeControl  [(ngModel)]="hebergementSelect">
+                              <option value="0">
+
+                              </option>
+                                <option *ngFor="let hebergement of hebergements" [value]="hebergement.id">
+                                  {{ hebergement.libelle }}
+                                </option>
+                              </select>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+
+</table>
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">SITUATION A L’ENTREE EN FORMATION</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radio">
+                            <label>Etes-vous allocataire de minima sociaux ?</label>
+                            <select matNativeControl [(ngModel)]="allocationSelect" required>
+                                <option *ngFor="let allocataire of allocataires" [value]="allocataire .value">
+                                  {{ allocataire.value }}
+                                </option>
+                              </select>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+
+</table>
+
+
+<table class="table">
+    <thead>
+            <tr>
+                <th colspan="3">SITUATION FACE AU MARCHE DU TRAVAIL</th>
+            </tr>
+    </thead>
+        <tbody>
+              <th>
+                    <div class="hdp container">
+                        <div class="radiocolumn">
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="demandeur" name="situation" (click)="toggle()" [(ngModel)]="situation"  required>
+                                <label class="custom-control-label" for="demandeur">DEMANDEUR D’EMPLOI</label>
+                                <div class="marg"  [hidden]="hidden">
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Inscrit" name="Emploi" (click)="toggl()" [(ngModel)]="Emploi"  required>
+                                        <label class="custom-control-label " for="Inscrit">Inscrit à Pôle Emploi</label>
+                                        <div class="marg radiocolumn" [hidden]="hidde">
+                                            <div>
+                                                <label for="num_inscription"><strong>N° Inscription</strong>  (7 chiffres et 1 lettre) : </label>
+                                                <input type="text" name="num_inscription" [(ngModel)]="num_inscription">
+                                            </div>
+                                            <div>
+                                                    <label for="num_inscription"><strong>Indemnisation Pôle Emploi </strong> :   </label>
+                                                    <input type="radio" class="custom-control-input radio-button"  value="Oui" name="IndemnisationPole" [(ngModel)]="IndemnisationPole" required>
+                                                    <label class="custom-control-label" for="Oui">Oui</label>
+
+                                                    <input type="radio" class="custom-control-input radio-button"  value="Non" name="IndemnisationPole" [(ngModel)]="IndemnisationPole"  required>
+                                                    <label class="custom-control-label" for="Non">Non</label>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="nonInscrit" name="Emploi" (click)="togglhide()" [(ngModel)]="Emploi" required>
+                                        <label class="custom-control-label" for="nonInscrit">Non Inscrit à Pôle Emploi</label>
+                                        <div class="marg radiocolumn" [hidden]="hidd">
+                                            <div>
+                                                <label for="temps_sans_emploi"><strong>Depuis combien de temps êtes-vous sans emploi ? </strong>  : </label>
+                                                <input type="text" name="temps_sans_emploi"  [(ngModel)]="temps_sans_emploi" >
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="salarie" name="situation" (click)="togglehide()" [(ngModel)]="situation" required>
+                                <label class="custom-control-label" for="salarie">SALARIE</label>
+                                <div class="marg"  [hidden]="hide">
+                                    <div class="radion">
+                                        <label><strong>Catégorie Socio professionnelle </strong> :   </label>
+                                        <select matNativeControl required [(ngModel)]="categorieSelect">
+                                            <option *ngFor="let categorie of categories" [value]="categorie .value">
+                                              {{ categorie.value }}
+                                            </option>
+                                          </select>
+
+                                    </div>
+                                    <div class="radion">
+                                        <label><strong>Catégorie Socio professionnelle </strong> :   </label>
+                                        <select matNativeControl required [(ngModel)]="type_contratSelect">
+                                            <option *ngFor="let type of type_contrat" [value]="type.value">
+                                              {{ type.value }}
+                                            </option>
+                                          </select>
+
+                                    </div>
+                                    <div class="radion">
+                                        <label><strong>Temps partiel inférieur à 24 h semaine </strong> :   </label>
+                                        <select matNativeControl required [(ngModel)]="tempsTravailtSelect">
+                                            <option value="oui">
+                                             Oui
+                                            </option>
+                                            <option value="oui">
+                                                Non
+                                            </option>
+                                          </select>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="independant" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                <label class="custom-control-label" for="independant">INDEPENDANT – ARTISAN</label>
+
+                            </div>
+
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="conge" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                <label class="custom-control-label" for="conge">CONGES MATERNITE CLCA</label>
+
+                            </div>
+
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="sans" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                <label class="custom-control-label" for="sans">PERSONNE SANS ACTIVITE PROFESSIONNELLE ET NON DEMANDEUR D’EMPLOI</label>
+
+                            </div>
+
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="retraite" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                <label class="custom-control-label" for="retraire">RETRAITE</label>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </th>
+        </tbody>
+
+</table>
+

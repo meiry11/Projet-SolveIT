@@ -1,0 +1,101 @@
+<app-buttons [chemin]="chemin"></app-buttons>
+<div class="row">
+
+  <div class="col-12">
+
+    <div class="card">
+
+        <div class="card-body">
+
+            <div class="table-responsive">
+
+                <table *ngIf="persons.length && type_tab=='stagiaire'" class="table table-hover table-responsive align-middle text-nowrap table-bordered"  datatable [dtOptions]="dtOptions" class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th class="text-dark font-medium fs-4">Numéro de securité</th>
+                            <th class="text-dark font-medium fs-4">Nom</th>
+                            <th class="text-dark font-medium fs-4">Prenom</th>
+                            <th class="text-dark font-medium fs-4">Session</th>
+                            <!-- <th class="text-dark font-medium fs-4 modif" [hidden]="hidden"></th> -->
+                            <th class="text-dark font-medium fs-4 supprim" [hidden]="hidden"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor='let tr of persons; index as i'  (click)="toggle(i)">
+                            <td>
+                                {{ tr.numSecu }}
+                            </td>
+                            <td>
+                                {{tr.nom }}
+                            </td>
+                            <td>
+                                {{tr.prenom}}
+                            </td>
+                            <td>
+                                {{tr.session.libelle}}
+                            </td>
+                         <!-- <td  class="modif"  [hidden]="hidden">
+                                <app-buttons-modify [chemin]="chemin"  *ngIf="id==i && !hidden" ></app-buttons-modify>
+                            </td> -->
+                            <td class="supprim" [hidden]="hidden">
+                                <app-buttons-delete *ngIf="id==i && !hidden"></app-buttons-delete>
+                            </td>
+                        </tr>
+                    </tbody>
+                         <tbody *ngIf="persons?.length == 0">
+                        <tr>
+                          <td colspan="3" class="no-data-available">table vide!</td>
+                        </tr>
+                      </tbody>
+                </table>
+
+
+                <table *ngIf="persons.length && type_tab=='feuille'" class="table table-hover table-responsive align-middle text-nowrap table-bordered"  datatable [dtOptions]="dtOptions" class="row-border hover">
+                    <thead>
+                        <tr>
+                            <th class="text-dark font-medium fs-4">Numéro</th>
+                            <th class="text-dark font-medium fs-4">Intitulé</th>
+                            <th class="text-dark font-medium fs-4">Lieu</th>
+                            <th class="text-dark font-medium fs-4">Date emargement</th>
+                            <!-- <th class="text-dark font-medium fs-4 modif" [hidden]="hidden"></th> -->
+                            <th class="text-dark font-medium fs-4 supprim" [hidden]="hidden"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr  *ngFor='let tr of persons; index as i'  (click)="toggle(i)">
+                            <td>
+                                {{ tr.num }}
+                            </td>
+                            <td>
+                                {{tr.intitule }}
+                            </td>
+                            <td>
+                                {{tr.lieu}}
+                            </td>
+                            <td>
+                                {{tr.date_emargement}}
+                            </td>
+                         <!-- <td  class="modif" [hidden]="hidden">
+                                <app-buttons-modify [chemin]="chemin" [num] ="tr.num" *ngIf="id==i && !hidden" ></app-buttons-modify>
+                            </td> -->
+                            <td class="supprim" [hidden]="hidden">
+                                <app-buttons-delete (click)="onDelete()" *ngIf="id==i && !hidden"></app-buttons-delete>
+                            </td>
+                        </tr>
+                    </tbody>
+                         <tbody *ngIf="persons?.length == 0">
+                        <tr>
+                          <td colspan="3" class="no-data-available">table vide!</td>
+                        </tr>
+                      </tbody>
+                </table>
+
+            </div>
+
+        </div>
+    </div>
+
+
+
+  </div>
+</div>

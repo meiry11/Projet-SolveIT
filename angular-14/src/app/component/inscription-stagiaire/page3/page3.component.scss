@@ -1,0 +1,43 @@
+
+  table, td {
+    border: 2px solid #333;
+}
+.box-signature{
+    border:2px solid #131314;
+    border-collapse:collapse;
+    background-color: white;
+    padding: 50px;
+}
+.box-titre{
+    background-color: #131314;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+.box-body{
+    border:2px solid #131314;
+    padding: 5px;
+    color: #131314;
+    line-height: 30px;
+}
+table {
+    border:3px solid #131314;
+    border-collapse:collapse;
+    background-color: white;
+    width:101%;
+    margin:auto;
+    text-align: justify;
+    line-height: 20px;
+    }
+h5,h6{
+    line-height: 1.5em;
+}
+.blue{
+    color: blue;
+}
+
+.box-input-name{
+    border: none;
+    border-bottom: solid grey;
+    width: 500px;
+}

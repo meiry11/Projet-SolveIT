@@ -1,0 +1,672 @@
+<div class="row">        
+
+    <div class="col-12">
+   
+      <div class="card">
+  
+        <div class="card-body">
+          <form name="form">
+
+
+            <section>
+              <div class="hdp container">
+                  <div>
+                      <img src="assets/images/formul/logo-union-europe.jpg" alt="union europeenne">
+                  </div>
+                  <div>
+                      <img src="assets/images/formul/hauts-de-France.png" alt="haut de France">
+                  </div>
+                  <div>
+                      <img src="assets/images/formul/logo.png" alt="logo3">
+                  </div>
+              </div>
+              <br>
+              <div class="titre container">
+                  <h3>ARGOS - FICHE IDENTIFICATION STAGIAIRE</h3>
+                  <h6>(V.2021-07-02)</h6>
+                  <br>
+                  <label for="code" class="left">Votre CODE Organisme <mark class="match">>>></mark></label>
+                  <input class="inp1" type="text" size="30" maxlength="30" name="CodeOrga" [(ngModel)]="codeOrga" />
+              </div>
+              <br>
+              <div>
+                  <table class="table">
+                          <tbody>
+                              <tr>
+                                  <th>
+                                      <label for="nsession"><mark class="left1">Numéro de session</mark><mark class="match">>>></mark></label>
+                                      <input class="inp1" type="text" size="30" maxlength="30" name="nsession" [(ngModel)]="nSession"/>
+                                  </th>
+                              </tr>
+                              <tr>                       
+                                  <th>
+                                      <label for="entree"><mark mark class="left1">Date d’entrée et sortie en parcours de formation</mark><em id="date"></em> : <mark class="match">>>></mark></label>
+                                      <input id="date1" type="date"  name="entree" [(ngModel)]="dateEntre" />
+                                      <input id="dates" type="date"  name="sortie" [(ngModel)]="dateSortie" />
+          
+                                  </th>   
+                              </tr>
+                          </tbody> 
+                  </table>
+              </div>
+              <div>
+                  <table class="table">
+                      <thead>
+                              <tr>
+                                  <th colspan="3">ETAT CIVIL</th>
+                              </tr>
+                      </thead>
+                          <tbody>
+                              <tr>
+                                <th>
+                                      <div id="ec1">
+                                      <input name="Mr" id="Mr" type="radio"  [(ngModel)]="mr"/><label for="Mr">Mr</label>
+                                      <input name="Mr" id="Mme" type="radio"  [(ngModel)]="mr"/><label for="Mme">Mme</label>
+                                      <input name="Mr" id="Mle" type="radio"  [(ngModel)]="mr"/><label for="Mlle">Mlle</label>
+                                      <label for="nom"><mark class="match">NOM:</mark></label>
+                                      <input class="inp1" type="text" size="30" maxlength="30"  name="nom" [(ngModel)]="nom"/>
+                                      </div>
+                                      <div id="ec2">
+                                      <input name="HF" id="HOMME" type="radio"  [(ngModel)]="HF"/><label for="HOMME">HOMME</label>
+                                      <input name="HF" id="FEMME" type="radio"  [(ngModel)]="HF"/><label for="FEMME">FEMME</label>
+                                      <label for="prenom"><mark class="match">PRENOM:</mark></label>
+                                      <input class="inp1" type="text" size="30" maxlength="30" name="prenom" [(ngModel)]="prenom"/>
+                                      </div>
+                                      <div>
+                                          <label for="naissance"><mark class="match">Né(e) le</mark><em id="date"></em> :</label>
+                                          <input id="date1" type="date" name="naissance" [(ngModel)]="datenaissance">
+                                      </div>
+                                      <div>
+                                          <label for="Nss">NIR (numéro de sécurité sociale) :</label>
+                                          <input class="inp1"  type="text" size="30" maxlength="30" name="nss" [(ngModel)]="nss"/>
+                                      </div> 
+                                      <div>
+                                          <label for="nnaiss"><mark class="match">NOM de NAISSANCE :</mark></label>
+                                          <input class="inp1" type="text" size="30" maxlength="30" name="nnaissance" [(ngModel)]="nomnaissance"/>
+                                      </div>     
+                                      <div>
+                                          <label for="Nss"><span class="underline">PAYS de NAISSANCE :</span></label>
+                                          <input class="inp1" type="text" size="30" maxlength="30" name="paysnaiss" [(ngModel)]="paysnaiss" />
+                                      </div>                      
+                                  </th>
+                              </tr>
+                          </tbody>
+               </table>
+              </div>
+              <div>
+                  <table class="table">
+                      <thead>
+                              <tr>
+                                  <th colspan="3">COORDONNÉES</th>
+                              </tr>
+                      </thead>
+                              <tbody>
+                                <th>
+                                      <div>
+                                          <label for="Adresse"><span class="underline">Adresse : </span></label>
+                                          <input class="inp1"  type="text" size="30" maxlength="50" name="adress" [(ngModel)]="adress1"/>
+                                          <input class="inp1" type="text" size="30" maxlength="50" name="adress" />
+                                      </div>    
+                                      <div class="hdp container">
+                                          <div>
+                                              <label for="CP"><span class="underline">Code postal :</span></label>
+                                              <input class="inp2" type="text" size="30" maxlength="5" name="cp" [(ngModel)]="cp"/>
+                                          </div>
+                                          <div>
+                                              <label for="Ville"><span class="underline">Ville :</span></label>
+                                              <input class="inp2" type="text" size="30" maxlength="50" name="ville" [(ngModel)]="ville"/>
+                                          </div>
+                                          <div>
+                                              <label for="Tel"><span class="underline">Tel : </span></label>
+                                              <input class="inp2" type="text" size="30" maxlength="20" name="tel" [(ngModel)]="tel"/>
+                                          </div>
+                                      </div>
+                                      <div>
+                                          <label for="Email"><span class="underline">Email</span><em>*</em>:</label>
+                                          <input class="inp1" type="text" size="30" maxlength="30" name="email" [(ngModel)]="email"/>
+                                      </div>
+                                      <br>
+                                      <h6>
+                                          <em>*</em> <em>Attention - cette adresse mail sera utilisée pour toutes les correspondances ultérieures que la Région engagera avec vous (exemple, pour des enquêtes futures)</em>
+                                      </h6> 
+                                  </th> 
+                              </tbody>
+                  </table>                       
+                  <table class="table">
+                      <thead>
+                              <tr>
+                                  <th colspan="3">FORMATION INITIALE ET CONTINUE</th>
+                              </tr>
+                      </thead>
+                          <tbody>
+                                <th>             
+                                      <div class="hdp container">
+                                          <div>
+                                              <p><em>Quel est votre diplôme le plus élevé obtenu ?</em></p>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="ad" id="ad" type="radio" /><label for="ad">AUCUN DIPLOME</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BREVET" id="BREVET" type="radio" /><label for="BREVET">BREVET DES COLLEGES  OU EQUIVALENT</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="CAP" id="CAP" type="radio" /><label for="CAP">CAP /BEP  OU EQUIVALENT</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BAC" id="BAC" type="radio" /><label for="BAC">BAC  OU EQUIVALENT</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BAC2" id="BAC2" type="radio" /><label for="BAC2">BAC+2 - DEUG/DEUST/DUT/BTS</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BAC3" id="BAC3" type="radio" /><label for="BAC3">BAC+3 - LICENCE OU EQUIVALENT</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BAC4" id="BAC4" type="radio" /><label for="BAC4">BAC+4 - MAITRISE OU EQUIVALENT</label></div>
+                                              <div><input name="diplome" [(ngModel)]="diplome" value="BAC5" id="BAC5" type="radio" /><label for="BAC4">BAC+5 - MASTER OU EQUIVALENT</label></div>
+                                          </div>
+                                          <div>
+                                              <p><em>Quelle est votre dernière classe fréquentée ?</em></p>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="pns" id="pns" type="radio" /><label for="pns">Classe primaire ou non scolarisé</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="clg56" id="clg56" type="radio" /><label for="clg56">6eme ou 5eme collège</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="clg43" id="clg43" type="radio" /><label for="clg43">4eme ou 3eme collège </label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="CAP12" id="CAP12" type="radio" /><label for="CAP12">1ere ou 2eme année de CAP/BEP</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="CAPFIN" id="CAPFIN" type="radio" /><label for="CAPFIN">Dernière année de CAP/BEP</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="LYC21" id="LYC21" type="radio" /><label for="LYC21">Classe 2nd ou 1ere lycée</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="terminale" id="terminale" type="radio" /><label for="terminale">Classe terminale (BAC ou BAC Pro)</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC2D" id="BAC2D" type="radio" /><label for="BAC2D">1ere ou dernière année de BAC + 2</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC3D" id="BAC3D" type="radio" /><label for="BAC3D">Dernière année de BAC + 3</label></div>
+                                              <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC45D" id="BAC45D" type="radio" /><label for="BAC45D">Dernière année de BAC + 4 ou 5</label></div>
+                                          </div>
+                                      </div>
+                                  </th>
+                          </tbody>         
+                          <tbody>
+                              <th>             
+                                    <div class="hdp container">
+                                        <div>
+                                            <h2><em>Quel est votre niveau à l’entrée en formation (*)</em></h2>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv1" id="niv1" type="radio" /><label for="niv1">Niveau 1 : CLEA, MSB</label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv2" id="niv2" type="radio" /><label for="niv2">Niveau 2 : fin d'études 3ème</label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv3" id="niv3" type="radio" /><label for="niv3">Niveau 3 : CAP, BEP</label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv4" id="niv4" type="radio" /><label for="niv4">Niveau 4 : Bac</label></div>
+                                        </div>
+                                        <div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv5" id="niv5" type="radio" /><label for="niv5">Niveau 5 : BTS/ DUT ou Bac + 2 </label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv6" id="niv6" type="radio" /><label for="niv6">Niveau 6 : Licence, master I= BAC + 3 et 4</label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv7" id="niv7" type="radio" /><label for="niv7">Niveau 7 : Master II , ingénieur, DESS = Bac + 5 et 6 </label></div>
+                                            <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv8" id="niv8" type="radio" /><label for="niv8">Niveau 8 : Doctorat = Bac + 8</label></div>
+                                        </div>
+                                    </div>
+                                </th>
+                         </tbody>
+                        <tbody>
+                          <th>             
+                                <div class="hdp container">
+                                    <div>
+                                        <h2><em>Avez-vous des difficultés pour lire et écrire au quotidien?</em></h2>
+                                        <div><input name="diffiulte" [(ngModel)]="diffiulte" value="Oui" id="Oui" type="radio" /><label for="Oui">Oui</label></div>
+                                    </div>
+                                    <div>
+                                        <div><input  name="diffiulte" [(ngModel)]="diffiulte" value="Non" id="Non" type="radio" /><label for="Non">Non</label></div>
+                                    </div>
+                                </div>
+                                <h6><em>(*) 2021 - Nouvelle nomenclature des niveaux</em></h6>
+                            </th>
+                    </tbody>  
+                  </table>       
+              </div>
+          </section>
+
+          <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">DEPARTEMENT OU TERRITOIRE D’OUTRE-MER</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Habitez-vous dans un DOM-TOM (Guadeloupe, Martinique…) ?</label>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Oui" name="DOM" [(ngModel)]="DOM" required>
+                                        <label class="custom-control-label" for="Oui">Oui</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Non" name="DOM" [(ngModel)]="DOM"  required>
+                                        <label class="custom-control-label" for="Non">Non</label>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+        </table>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">FAMILLE</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Vivez-vous?</label>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="seul" name="Vivez"  [(ngModel)]="Vivez" required>
+                                        <label class="custom-control-label" for="seul">Seul</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="couple" name="Vivez"  [(ngModel)]="Vivez"  required>
+                                        <label class="custom-control-label" for="couple">En couple</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="parent" name="Vivez"  [(ngModel)]="Vivez" required>
+                                        <label class="custom-control-label" for="parent">Chez un parent</label>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+                <tbody>
+                    <th>
+                          <div class="hdp container">
+        
+                                <div class="radio">
+                                    <label>Nombre de personnes en emploi du foyer :</label>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="0" name="foyer" [(ngModel)]="foyer" required>
+                                        <label class="custom-control-label" for="0">0</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="1" name="foyer" [(ngModel)]="foyer" required>
+                                        <label class="custom-control-label" for="1">1</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="2" name="foyer" [(ngModel)]="foyer" required>
+                                        <label class="custom-control-label" for="2">2</label>
+                                    </div>
+        
+                                </div>
+                          </div>
+                      </th>
+              </tbody>
+              <tbody>
+                    <th>
+                      <div class="hdp container">
+        
+                        <div class="radio">
+                            <label>Avez-vous un ou plusieurs enfants à charge ?</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Oui" name="enfants" [(ngModel)]="enfants" required>
+                                <label class="custom-control-label" for="Oui">Oui</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Non" name="enfants" [(ngModel)]="enfants" required>
+                                <label class="custom-control-label" for="Non">Non</label>
+                            </div>
+                        </div>
+                      </div>
+                  </th>
+                </tbody>
+                <tbody>
+                    <th>
+                      <div class="hdp container">
+        
+                        <div class="radio">
+                            <label>Vos deux parents sont-ils nés en France?</label>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Oui" name="parents" [(ngModel)]="parents" required>
+                                <label class="custom-control-label" for="Oui">Oui</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="Non" name="parents" [(ngModel)]="parents" required>
+                                <label class="custom-control-label" for="Non">Non</label>
+                            </div>
+                            <div>
+                                <input type="radio" class="custom-control-input radio-button"  value="pas" name="parents" [(ngModel)]="parents" required>
+                                <label class="custom-control-label" for="pas">Ne se prononce pas</label>
+                            </div>
+                        </div>
+                      </div>
+                  </th>
+                </tbody>
+        </table>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">LOGEMENT</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Vous êtes :</label>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Propriétaire" name="logement"  [(ngModel)]="logement"  required>
+                                        <label class="custom-control-label" for="Propriétaire">Propriétaire</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Locataire" name="logement" [(ngModel)]="logement"  required>
+                                        <label class="custom-control-label" for="Locataire">Locataire</label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="Autre" name="logement" [(ngModel)]="logement"  required>
+                                        <label class="custom-control-label" for="Autre">Autre</label>
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+                <tbody>
+                    <th>
+                          <div class="hdp container">
+        
+                            <div class="radio">
+                                <label>Avez-vous des risques de perdre votre logement ?</label>
+                                <div>
+                                    <input type="radio" class="custom-control-input radio-button"  value="Oui" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                                    <label class="custom-control-label" for="Oui">Oui</label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="custom-control-input radio-button"  value="Non" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                                    <label class="custom-control-label" for="Non">Non</label>
+                                </div>
+                                <div>
+                                    <input type="radio" class="custom-control-input radio-button"  value="pas" name="perdrelogement"  [(ngModel)]="perdrelogement"  required>
+                                    <label class="custom-control-label" for="pas">Ne se prononce pas</label>
+                                </div>
+                            </div>
+                          </div>
+                      </th>
+              </tbody>
+        
+        </table>
+        
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">ORIGINE DE LA DEMARCHE DE FORMATION</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Quelle est la structure qui vous a orienté vers cette formation ?</label>
+                                    <select matNativeControl name="structureSelect" required [(ngModel)]="structureSelect">
+                                        <option *ngFor="let structure of structures" [value]="structure.value">
+                                          {{ structure.value }}
+                                        </option>
+                                      </select>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+        
+        </table>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">MOYENS DE TRANSPORT</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Quels moyens de transport utilisez-vous pour venir en formation ?</label>
+                                    <select matNativeControl required name="transportSelect"  [(ngModel)]="transportSelect">
+                                        <option *ngFor="let transport of transports" [value]="transport.value">
+                                          {{ transport.value }}
+                                        </option>
+                                      </select>
+        
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+                <tbody>
+                    <th>
+                          <div class="hdp container">
+                            <div>
+                                <label class="custom-control-label" for="temps">Temps de trajet (En minute) : </label>
+                                <input type="text" class="custom-control-input " name="temps_trajet" [(ngModel)]="temps_trajet" required>
+                            </div>
+        
+                          </div>
+                      </th>
+              </tbody>
+        
+        </table>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">Prestation HEBERGEMENT liée à la formation</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Si hébergement : Indiquez le Code Arrondissement
+                                        </label>
+                                    <select matNativeControl name="hebergementSelect" [(ngModel)]="hebergementSelect">
+                                      <option value="0">
+        
+                                      </option>
+                                        <option *ngFor="let hebergement of hebergements" [value]="hebergement.id">
+                                          {{ hebergement.libelle }}
+                                        </option>
+                                      </select>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+        
+        </table>
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">SITUATION A L’ENTREE EN FORMATION</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radio">
+                                    <label>Etes-vous allocataire de minima sociaux ?</label>
+                                    <select matNativeControl name="allocationSelect" [(ngModel)]="allocationSelect" required>
+                                        <option *ngFor="let allocataire of allocataires" [value]="allocataire .value">
+                                          {{ allocataire.value }}
+                                        </option>
+                                      </select>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+        
+        </table>
+        
+        
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">SITUATION FACE AU MARCHE DU TRAVAIL</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>
+                            <div class="hdp container">
+                                <div class="radiocolumn">
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="demandeur" name="situation" (click)="toggle()" [(ngModel)]="situation"  required>
+                                        <label class="custom-control-label" for="demandeur">DEMANDEUR D’EMPLOI</label>
+                                        <div class="marg"  [hidden]="hidden">
+                                            <div>
+                                                <input type="radio" class="custom-control-input radio-button"  value="Inscrit" name="Emploi" (click)="toggl()" [(ngModel)]="Emploi"  required>
+                                                <label class="custom-control-label " for="Inscrit">Inscrit à Pôle Emploi</label>
+                                                <div class="marg radiocolumn" [hidden]="hidde">
+                                                    <div>
+                                                        <label for="num_inscription"><strong>N° Inscription</strong>  (7 chiffres et 1 lettre) : </label>
+                                                        <input type="text" name="num_inscription" [(ngModel)]="num_inscription">
+                                                    </div>
+                                                    <div>
+                                                            <label for="num_inscription"><strong>Indemnisation Pôle Emploi </strong> :   </label>
+                                                            <input type="radio" class="custom-control-input radio-button"  value="Oui" name="IndemnisationPole" [(ngModel)]="IndemnisationPole" required>
+                                                            <label class="custom-control-label" for="Oui">Oui</label>
+        
+                                                            <input type="radio" class="custom-control-input radio-button"  value="Non" name="IndemnisationPole" [(ngModel)]="IndemnisationPole"  required>
+                                                            <label class="custom-control-label" for="Non">Non</label>
+        
+                                                    </div>
+        
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <input type="radio" class="custom-control-input radio-button"  value="nonInscrit" name="Emploi" (click)="togglhide()" [(ngModel)]="Emploi" required>
+                                                <label class="custom-control-label" for="nonInscrit">Non Inscrit à Pôle Emploi</label>
+                                                <div class="marg radiocolumn" [hidden]="hidd">
+                                                    <div>
+                                                        <label for="temps_sans_emploi"><strong>Depuis combien de temps êtes-vous sans emploi ? </strong>  : </label>
+                                                        <input type="text" name="temps_sans_emploi"  [(ngModel)]="temps_sans_emploi" >
+                                                    </div>
+                                                </div>
+                                            </div>
+        
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="salarie" name="situation" (click)="togglehide()" [(ngModel)]="situation" required>
+                                        <label class="custom-control-label" for="salarie">SALARIE</label>
+                                        <div class="marg"  [hidden]="hide">
+                                            <div class="radion">
+                                                <label><strong>Catégorie Socio professionnelle </strong> :   </label>
+                                                <select matNativeControl name="categorieSelect" required [(ngModel)]="categorieSelect">
+                                                    <option *ngFor="let categorie of categories" [value]="categorie .value">
+                                                      {{ categorie.value }}
+                                                    </option>
+                                                  </select>
+        
+                                            </div>
+                                            <div class="radion">
+                                                <label><strong>Catégorie Socio professionnelle </strong> :   </label>
+                                                <select matNativeControl name="type_contratSelect" required [(ngModel)]="type_contratSelect">
+                                                    <option *ngFor="let type of type_contrat" [value]="type.value">
+                                                      {{ type.value }}
+                                                    </option>
+                                                  </select>
+        
+                                            </div>
+                                            <div class="radion">
+                                                <label><strong>Temps partiel inférieur à 24 h semaine </strong> :   </label>
+                                                <select matNativeControl required name="tempsTravailtSelect" [(ngModel)]="tempsTravailtSelect">
+                                                    <option value="oui">
+                                                     Oui
+                                                    </option>
+                                                    <option value="oui">
+                                                        Non
+                                                    </option>
+                                                  </select>
+        
+                                            </div>
+        
+                                        </div>
+                                    </div>
+        
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="independant" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                        <label class="custom-control-label" for="independant">INDEPENDANT – ARTISAN</label>
+        
+                                    </div>
+        
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="conge" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                        <label class="custom-control-label" for="conge">CONGES MATERNITE CLCA</label>
+        
+                                    </div>
+        
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="sans" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                        <label class="custom-control-label" for="sans">PERSONNE SANS ACTIVITE PROFESSIONNELLE ET NON DEMANDEUR D’EMPLOI</label>
+        
+                                    </div>
+        
+                                    <div>
+                                        <input type="radio" class="custom-control-input radio-button"  value="retraite" name="situation" (click)="init()"  [(ngModel)]="situation" required>
+                                        <label class="custom-control-label" for="retraire">RETRAITE</label>
+        
+                                    </div>
+        
+                                </div>
+        
+                            </div>
+                        </th>
+                </tbody>
+        
+        </table>
+        
+        <table class="table">
+          <thead>
+              <tr class="whiteb">
+                      <h5>La Région mobilise des fonds publics pour financer votre formation, vous permettre d’améliorer vos compétences et améliorer vos possibilités de trouver un emploi. Il est donc de votre intérêt de vous investir et d’être assidus pour la réussite de cette formation.
+                      Ces financements publics impliquent que la Région puisse évaluer la formation financée. C’est pourquoi, vous devez vous engager à utiliser les outils fournis par la Région notamment « NIVO Hauts-de-France » afin de permettre à la Région d’analyser l’efficacité de votre formation. Vous vous engagez aussi à répondre à l'enquête d'insertion qui a lieu 6 mois après votre sortie de formation. Cette enquête permet de vérifier la réussite de votre recherche d’emploi liée à votre formation. 
+                      L’ensemble de ces données doit permettre d’améliorer la qualité mais aussi de disposer d’une cartographie des sorties dans l’emploi suite à une formation financée par la Région.
+                      </h5>
+      
+                  <h6>
+                      Dans le cadre de sa mission de financement de la formation professionnelle (Article L6121-1 du code du travail), la Région recueille des informations à caractère personnel concernant les stagiaires. Ces informations font l'objet d'un traitement informatique destiné au suivi des parcours de formation et à l'élaboration de statistiques non nominatives. Les destinataires des données sont les services de la direction de la formation professionnelle de la Région Hauts-de-France, l’organisme dans lequel le stagiaire suit sa formation mais aussi l'Union Européenne, Pôle Emploi, l'Agence de Services et de Paiement, la Caisse des Dépôts et Consignations (pour le compte personnel de formation) et les organismes chargés par la Région Hauts-de-France d'une mission d'évaluation.
+                      Conformément à l’article R6316-1 du code du travail sur la qualité de l’offre de formation, les données recueillies seront également utilisées de façon anonyme à des fins de suivi et d'évaluation de la qualité de l’offre de formation financée par la Région.
+                      Conformément au règlement général sur la protection des données (RGPD) et à la loi « informatique et libertés » du 6 janvier 1978 modifiée, vous bénéficiez d’un droit d’accès, de rectification des données à caractère personnel vous concernant ou encore de limitation du traitement. Vous pouvez également, pour des motifs légitimes, vous opposer au traitement de vos données. Vous pouvez exercer vos droits en écrivant à la direction de la formation professionnelle de la Région Hauts-de-France : <span class="blue">@hautsdefrance.fr</span>
+                      Les données concernant la rémunération des stagiaires ne peuvent pas être effacées immédiatement. En effet, dans le cadre de son rôle d’employeur, la Région doit conserver les données de paie pendant 5 ans. Article L3243-4 et R1221-26 du code du travail.
+                      Les données concernant le ou les parcours de formation sont soumises aux contrôles effectués par le Fonds Social Européen (FSE) qui oblige la Région à conserver les données des stagiaires pour une durée de 10 ans en conformité de l’article 17.3.b du Règlement (UE) 2016/679. 
+                      Pour les questions concernant les activités de traitement des données mises en œuvre par la Région Hauts-de-France, veuillez contacter le délégué à la protection des données (DPO) de la Région Hauts-de-France <span class="blue">www.hautsdefrance.fr/informatique-et-libertes</span>
+                  </h6>
+                  </tr>
+                  <tr>
+                      <div class="box-signature">
+                          <div class="box-titre">
+                              Approbation du stagiaire
+                          </div>
+                          <div class="box-body">
+                              Je soussignée(e) <input type="text" class="box-input-name" required name="signature" [(ngModel)]="signature"/> (prénom – nom), 
+                              déclare sur l’honneur l’exactitude des renseignements communiqués dans ce document
+                              <br>
+                              Date : <input type="date" class="box-input-date" required name="datesign" [(ngModel)]="datesign"/>
+                          </div>
+                      </div>
+                  </tr>
+          </thead>
+      </table>
+       
+
+
+
+       
+            <div class="btn" [hidden]="dden">
+              
+              <!-- <app-enregistrer (click)="onSubmit()"></app-enregistrer> -->
+              <button type="button" class="bttn" (click)="printPage()">
+                <app-imprimer></app-imprimer>
+              </button>
+              
+              <app-annuler></app-annuler>              
+            </div>
+
+          </form>
+
+        </div>
+      </div>
+    </div>
+</div>  
+
+

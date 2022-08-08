@@ -1,0 +1,195 @@
+<section>
+    <div class="hdp container">
+        <div>
+            <img src="assets/images/formul/logo-union-europe.jpg" alt="union europeenne">
+        </div>
+        <div>
+            <img src="assets/images/formul/hauts-de-France.png" alt="haut de France">
+        </div>
+        <div>
+            <img src="assets/images/formul/logo.png" alt="logo3">
+        </div>
+    </div>
+    <br>
+    <div class="titre container">
+        <h3>ARGOS - FICHE IDENTIFICATION STAGIAIRE</h3>
+        <h6>(V.2021-07-02)</h6>
+        <br>
+        <label for="code" class="left">Votre CODE Organisme <mark class="match">>>></mark></label>
+        <input class="inp1" type="text" size="30" maxlength="30" name="CodeOrga" [(ngModel)]="codeOrga" />
+    </div>
+    <br>
+    <div>
+        <table class="table">
+                <tbody>
+                    <tr>
+                        <th>
+                            <label for="nsession"><mark class="left1">Numéro de session</mark><mark class="match">>>></mark></label>
+                            <input class="inp1" type="text" size="30" maxlength="30" name="nsession" [(ngModel)]="nSession"/>
+                        </th>
+                    </tr>
+                    <tr>                       
+                        <th>
+                            <label for="entree"><mark mark class="left1">Date d’entrée et sortie en parcours de formation</mark><em id="date"></em> : <mark class="match">>>></mark></label>
+                            <input id="date1" type="date"  name="entree" [(ngModel)]="dateEntre" />
+                            <input id="dates" type="date"  name="sortie" [(ngModel)]="dateSortie" />
+
+                        </th>   
+                    </tr>
+                </tbody> 
+        </table>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">ETAT CIVIL</th>
+                    </tr>
+            </thead>
+                <tbody>
+                    <tr>
+                      <th>
+                            <div id="ec1">
+                            <input name="Mr" id="Mr" type="radio"  [(ngModel)]="mr"/><label for="Mr">Mr</label>
+                            <input name="Mr" id="Mme" type="radio"  [(ngModel)]="mr"/><label for="Mme">Mme</label>
+                            <input name="Mr" id="Mle" type="radio"  [(ngModel)]="mr"/><label for="Mlle">Mlle</label><label for="nom"><mark class="match">NOM:</mark></label>
+                            <input class="inp1" type="text" size="30" maxlength="30"  name="nom" [(ngModel)]="nom"/>
+                            </div>
+                            <div id="ec2">
+                            <input name="HF" id="HOMME" type="radio"  [(ngModel)]="HF"/><label for="HOMME">HOMME</label>
+                            <input name="HF" id="FEMME" type="radio"  [(ngModel)]="HF"/><label for="FEMME">FEMME</label>
+                            <label for="prenom"><mark class="match">PRENOM:</mark></label>
+                            <input class="inp1" type="text" size="30" maxlength="30" name="prenom" [(ngModel)]="prenom"/>
+                            </div>
+                            <div>
+                                <label for="naissance"><mark class="match">Né(e) le</mark><em id="date"></em> :</label>
+                                <input id="date1" type="date" name="bday" name="naissance" [(ngModel)]="datenaissance">
+                            </div>
+                            <div>
+                                <label for="Nss">NIR (numéro de sécurité sociale) :</label>
+                                <input class="inp1"  type="text" size="30" maxlength="30" name="nss" [(ngModel)]="nss"/>
+                            </div> 
+                            <div>
+                                <label for="nnaiss"><mark class="match">NOM de NAISSANCE :</mark></label>
+                                <input class="inp1" type="text" size="30" maxlength="30" name="nnaissance" [(ngModel)]="nomnaissance"/>
+                            </div>     
+                            <div>
+                                <label for="Nss"><span class="underline">PAYS de NAISSANCE :</span></label>
+                                <input class="inp1" type="text" size="30" maxlength="30" name="paysnaiss" [(ngModel)]="paysnaiss" />
+                            </div>                      
+                        </th>
+                    </tr>
+                </tbody>
+     </table>
+    </div>
+    <div>
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">COORDONNÉES</th>
+                    </tr>
+            </thead>
+                    <tbody>
+                      <th>
+                            <div>
+                                <label for="Adresse"><span class="underline">Adresse : </span></label>
+                                <input class="inp1"  type="text" size="30" maxlength="50" name="adress" [(ngModel)]="adress1"/>
+                                <input class="inp1" type="text" size="30" maxlength="50" name="adress" />
+                            </div>    
+                            <div class="hdp container">
+                                <div>
+                                    <label for="CP"><span class="underline">Code postal :</span></label>
+                                    <input class="inp2" type="text" size="30" maxlength="5" name="cp" [(ngModel)]="cp"/>
+                                </div>
+                                <div>
+                                    <label for="Ville"><span class="underline">Ville :</span></label>
+                                    <input class="inp2" type="text" size="30" maxlength="50" name="ville" [(ngModel)]="ville"/>
+                                </div>
+                                <div>
+                                    <label for="Tel"><span class="underline">Tel : </span></label>
+                                    <input class="inp2" type="text" size="30" maxlength="20" name="tel" [(ngModel)]="tel"/>
+                                </div>
+                            </div>
+                            <div>
+                                <label for="Email"><span class="underline">Email</span><em>*</em>:</label>
+                                <input class="inp1" type="text" size="30" maxlength="30" name="email" [(ngModel)]="email"/>
+                            </div>
+                            <br>
+                            <h6>
+                                <em>*</em> <em>Attention - cette adresse mail sera utilisée pour toutes les correspondances ultérieures que la Région engagera avec vous (exemple, pour des enquêtes futures)</em>
+                            </h6> 
+                        </th> 
+                    </tbody>
+        </table>                       
+        <table class="table">
+            <thead>
+                    <tr>
+                        <th colspan="3">FORMATION INITIALE ET CONTINUE</th>
+                    </tr>
+            </thead>
+                <tbody>
+                      <th>             
+                            <div class="hdp container">
+                                <div>
+                                    <p><em>Quel est votre diplôme le plus élevé obtenu ?</em></p>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="ad" id="ad" type="radio" /><label for="ad">AUCUN DIPLOME</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BREVET" id="BREVET" type="radio" /><label for="BREVET">BREVET DES COLLEGES  OU EQUIVALENT</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="CAP" id="CAP" type="radio" /><label for="CAP">CAP /BEP  OU EQUIVALENT</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BAC" id="BAC" type="radio" /><label for="BAC">BAC  OU EQUIVALENT</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BAC2" id="BAC2" type="radio" /><label for="BAC2">BAC+2 - DEUG/DEUST/DUT/BTS</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BAC3" id="BAC3" type="radio" /><label for="BAC3">BAC+3 - LICENCE OU EQUIVALENT</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BAC4" id="BAC4" type="radio" /><label for="BAC4">BAC+4 - MAITRISE OU EQUIVALENT</label></div>
+                                    <div><input name="diplome" [(ngModel)]="diplome" value="BAC5" id="BAC5" type="radio" /><label for="BAC4">BAC+5 - MASTER OU EQUIVALENT</label></div>
+                                </div>
+                                <div>
+                                    <p><em>Quelle est votre dernière classe fréquentée ?</em></p>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="pns" id="pns" type="radio" /><label for="pns">Classe primaire ou non scolarisé</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="clg56" id="clg56" type="radio" /><label for="clg56">6eme ou 5eme collège</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="clg43" id="clg43" type="radio" /><label for="clg43">4eme ou 3eme collège </label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="CAP12" id="CAP12" type="radio" /><label for="CAP12">1ere ou 2eme année de CAP/BEP</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="CAPFIN" id="CAPFIN" type="radio" /><label for="CAPFIN">Dernière année de CAP/BEP</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="LYC21" id="LYC21" type="radio" /><label for="LYC21">Classe 2nd ou 1ere lycée</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="terminale" id="terminale" type="radio" /><label for="terminale">Classe terminale (BAC ou BAC Pro)</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC2D" id="BAC2D" type="radio" /><label for="BAC2D">1ere ou dernière année de BAC + 2</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC3D" id="BAC3D" type="radio" /><label for="BAC3D">Dernière année de BAC + 3</label></div>
+                                    <div><input name="derniereClasse" [(ngModel)]="derniereClasse" value="BAC45D" id="BAC45D" type="radio" /><label for="BAC45D">Dernière année de BAC + 4 ou 5</label></div>
+                                </div>
+                            </div>
+                        </th>
+                </tbody>         
+                <tbody>
+                    <th>             
+                          <div class="hdp container">
+                              <div>
+                                  <h2><em>Quel est votre niveau à l’entrée en formation (*)</em></h2>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv1" id="niv1" type="radio" /><label for="niv1">Niveau 1 : CLEA, MSB</label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv2" id="niv2" type="radio" /><label for="niv2">Niveau 2 : fin d'études 3ème</label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv3" id="niv3" type="radio" /><label for="niv3">Niveau 3 : CAP, BEP</label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv4" id="niv4" type="radio" /><label for="niv4">Niveau 4 : Bac</label></div>
+                              </div>
+                              <div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv5" id="niv5" type="radio" /><label for="niv5">Niveau 5 : BTS/ DUT ou Bac + 2 </label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv6" id="niv6" type="radio" /><label for="niv6">Niveau 6 : Licence, master I= BAC + 3 et 4</label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv7" id="niv7" type="radio" /><label for="niv7">Niveau 7 : Master II , ingénieur, DESS = Bac + 5 et 6 </label></div>
+                                  <div><input name="niveauFormation" [(ngModel)]="niveauFormation" value="niv8" id="niv8" type="radio" /><label for="niv8">Niveau 8 : Doctorat = Bac + 8</label></div>
+                              </div>
+                          </div>
+                      </th>
+               </tbody>
+              <tbody>
+                <th>             
+                      <div class="hdp container">
+                          <div>
+                              <h2><em>Avez-vous des difficultés pour lire et écrire au quotidien?</em></h2>
+                              <div><input name="diffiulte" [(ngModel)]="diffiulte" value="Oui" id="Oui" type="radio" /><label for="Oui">Oui</label></div>
+                          </div>
+                          <div>
+                              <div><input  name="diffiulte" [(ngModel)]="diffiulte" value="Non" id="Non" type="radio" /><label for="Non">Non</label></div>
+                          </div>
+                      </div>
+                      <h6><em>(*) 2021 - Nouvelle nomenclature des niveaux</em></h6>
+                  </th>
+          </tbody>  
+        </table>       
+    </div>
+</section>

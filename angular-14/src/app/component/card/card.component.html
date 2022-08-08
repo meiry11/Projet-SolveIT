@@ -1,0 +1,52 @@
+<h4 class="font-medium mb-3">Feuille d emargement</h4>
+
+<h3 class="font-medium mb-3">Nouveauté</h3>
+<!-- Row -->
+<div class="row">
+  <!-- column -->
+  <div class="col-lg-3 col-md-6" *ngFor="let feuille of feuilles">
+    <!-- Card -->
+    <!-- ---------------------
+                      start Card title
+                  ---------------- -->
+    <div class="card">
+      <img
+        class="card-img-top img-responsive"
+        src="assets/images/bg/form1.png"
+        alt="Card image cap"
+      />
+      <div class="card-body">
+        <h4 class="card-title">{{feuille.intitule}}</h4>
+        <p class="card-text">
+          Date d'emargement : {{feuille.date_emargement}}
+        </p>
+        <p class="card-text">
+          Date début de formation : {{feuille.date_debut_formation}}
+        </p>
+        <p class="card-text">
+          Date fin de formation : {{feuille.date_fin_formation}}
+        </p>
+      <!-- <div class="button-group d-flex justify-content-around">
+          <a href="javascript:void(0)" class="                btn
+          btn-outline-success
+          w-100
+          d-block">Modifier</a>
+          <a href="javascript:void(0)" class="                btn
+          btn-outline-danger
+          w-100
+          d-block">Supprimer</a>          
+        </div>--> 
+
+      </div>
+    </div>
+    <!-- ---------------------
+                      end Card title
+                  ---------------- -->
+    <!-- Card -->
+  </div>
+
+</div>
+<!-- Row -->
+
+<app-table [apiUrl]="apiUrl" [chemin]="chemin" (onDelete)="updateDelete($event)"></app-table>
+

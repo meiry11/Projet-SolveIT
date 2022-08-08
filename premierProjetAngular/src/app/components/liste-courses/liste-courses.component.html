@@ -1,0 +1,11 @@
+<ul *ngFor="let article of articles">
+    <li>
+        {{article}}
+    </li>
+</ul>
+
+<form (ngSubmit)="addArticle()">
+    <label for="newArticle">Nouveau article</label>
+    <input type="text" name="newArticle" [(ngModel)]="newArticle">
+    <button type="submit">Ajouter</button>
+</form>

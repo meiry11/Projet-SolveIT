@@ -1,0 +1,55 @@
+#
+# Will start all docker constructions with MySQL
+# 
+# Password and network ports are handled in .env file
+#
+version: "3.9"
+services:
+  mysqldb:
+    image: mysql:8.0.29
+    restart: unless-stopped
+    env_file: ./.env
+    container_name: mysql_db_banque
+    environment:
+      - MYSQL_ROOT_PASSWORD=$DB_ROOT_PASSWORD
+      - MYSQL_DATABASE=$DB_DATABASE
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    ports:
+      - $DB_LOCAL_PORT:$DB_DOCKER_PORT
+    volumes:
+      # !Keep order of declaration, will init the data base with the dump at img creation
+      - vol_mysql_banque:/var/lib/mysql
+      - ./banque_mysql_docker.sql:/docker-entrypoint-initdb.d/setup.sql
+
+  app:
+    depends_on:
+      - mysqldb
+    build: ../../../en01.junit.banque
+    restart: on-failure
+    env_file: ./.env
+    container_name: banque_test_java_app
+    ports:
+      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
+    environment:
+      # Sets with "spring.profiles.active" : "mysql" or "h2" if you want
+      SPRING_APPLICATION_JSON: '{
+        "spring.profiles.active" : "mysql",
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:$DB_DOCKER_PORT/$DB_DATABASE?useSSL=false&serverTimezone=Europe/Paris&allowPublicKeyRetrieval=true",
+        "spring.datasource.username" : "$DB_USER",
+        "spring.datasource.password" : "$DB_ROOT_PASSWORD"}'
+    volumes:
+      - ../.m2:/root/.m2
+    stdin_open: true
+    tty: true
+
+volumes:
+  vol_mysql_banque:
+
+
+#
+# Run all  : docker-compose up
+# Stop all : docker-compose down
+# Stop all and delte all img : docker-compose down --rmi all
+#
+# After start, in order to see if database is ok
+# In docker cli (for mysql) :  mysql -h 127.0.0.1 -u root -P 3306 -p

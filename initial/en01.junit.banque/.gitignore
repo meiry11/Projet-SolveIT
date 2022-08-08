@@ -1,0 +1,13 @@
+.classpath
+.project
+.tern-project
+Thumbs.db
+*.log
+*.iml
+
+.settings/
+bin/
+target/
+.metadata/
+.idea/
+docker/.m2/

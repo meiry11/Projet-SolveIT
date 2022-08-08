@@ -1,0 +1,49 @@
+<div class="table-responsive">
+    <table class="table table-bordered align-middle text-nowrap">
+        <thead>
+            <tr>
+                <th class="text-dark font-medium fs-4">Nom et prénom du stagiaire</th>
+                <th *ngIf="time == '1'" class="text-dark font-medium fs-4">de  8    H     à  9    H </th>
+                <th *ngIf="time == '2'" class="text-dark font-medium fs-4">de  13    H     à  14    H </th>
+
+                <th *ngIf="time == '1'" class="text-dark font-medium fs-4">de  9    H     à  10    H </th>
+                <th *ngIf="time == '2'" class="text-dark font-medium fs-4">de  14    H     à  15    H </th>
+
+                <th *ngIf="time == '1'" class="text-dark font-medium fs-4">de  10    H     à  11    H </th>
+                <th *ngIf="time == '2'" class="text-dark font-medium fs-4">de  15    H     à  16    H </th>
+
+                <th *ngIf="time == '1'" class="text-dark font-medium fs-4">de  11    H     à  12    H </th>
+                <th *ngIf="time == '2'" class="text-dark font-medium fs-4">de  16    H     à  17    H </th>
+
+                <th class="text-dark font-medium fs-4">Total Heures Stagiaires</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let stagiaire of stagiaires">
+                <td>
+                   {{stagiaire.nom}} {{stagiaire.prenom}} 
+                </td>
+                <td>
+                    <mat-checkbox></mat-checkbox> 
+                </td>
+                <td>
+                    <mat-checkbox></mat-checkbox> 
+                </td>
+                <td>
+                    <mat-checkbox></mat-checkbox> 
+                </td>
+                <td>
+                    <mat-checkbox></mat-checkbox> 
+                </td>
+                <td>
+                    
+                </td>
+            </tr>
+           
+        </tbody>
+    </table>
+    <p>
+        A faire parvenir <span class="text-red"> chaque semaine</span>  à l'assistante du GRETA
+    </p>
+</div>
+

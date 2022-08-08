@@ -1,0 +1,14 @@
+<p>utilisateur-formulaire works!</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+    <label for="nom">
+        Nom
+        <input formControlName="nom" type="text">
+    </label>
+    <label for="prenom">
+        Prenom
+        <input formControlName="prenom" type="text">
+    </label>
+    <button type="submit">Ajouter</button>
+</form>
